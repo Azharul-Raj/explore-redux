@@ -4,12 +4,12 @@ export const initialState = {
     data: false,
     todos:[]
 }
-export const TodoReducer = (state,{type,payload}) => {
+export const TodoReducer = (state, { type, payload }) => {
     switch (type) {
         case ADD_LIST:
             return {
                 ...state,
-                todos:[...payload]
+                todos:state.todos.concat(payload)
             }
         case REMOVE_LIST:
             return {

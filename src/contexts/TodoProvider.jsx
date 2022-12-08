@@ -5,7 +5,7 @@ import { initialState, TodoReducer } from '../state/Reduces/TodoReducer';
 export const TodoContext = createContext();
 const TodoProvider = ({ children }) => {
     const [state, dispatch] = useReducer(TodoReducer, initialState);
-    const datas={state,dispatch}
+    const datas={ state,dispatch}
     return (
         <TodoContext.Provider value={datas}>
             {
