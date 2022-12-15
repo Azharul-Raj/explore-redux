@@ -14,7 +14,7 @@ const HomePage = () => {
   // const counterReducer = () => {
   //   console.log('here');
   // }
-  console.log(store.getState());
+  console.log('state',store.getState());
   return (
     <>
       <div className='flex justify-center items-center '>
