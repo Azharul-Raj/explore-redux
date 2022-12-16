@@ -1,9 +1,18 @@
 
+import { configureStore } from '@reduxjs/toolkit';
 import { RouterProvider } from 'react-router-dom';
 import './App.css'
-import { routes } from './layouts/route'
+import counterReducer  from './features/counter/CounterSlice';
+import PostReducer from './features/PostSlice/PostSlice';
+import { routes } from './layouts/route';
+export const store = configureStore({
+  reducer: {
+    counter: counterReducer,
+    posts:PostReducer,
+  }
+});
 
-
+console.log('store',store.getState());
 function App() {
   const router = routes;
   return (

@@ -2,13 +2,10 @@ import { configureStore } from '@reduxjs/toolkit';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import counterReducer, { decrement, increment } from '../features/counter/CounterSlice';
+import PostReducer from '../features/PostSlice/PostSlice';
 // import Data from '../contexts/Data'
 
-export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  }
-});
+
 const HomePage = () => {
   // data fetching here
   const dispatch = useDispatch();
@@ -19,7 +16,6 @@ const HomePage = () => {
   // const counterReducer = () => {
   //   console.log('here');
   // }
-  console.log('state',store.getState());
   return (
     <>
       <div className='flex justify-center items-center '>

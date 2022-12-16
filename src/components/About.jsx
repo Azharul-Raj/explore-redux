@@ -1,15 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import axios from "axios";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { failed, fetching, success } from "../features/data_fetch/DataSlice";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchPosts } from '../features/PostSlice/PostSlice';
 
 const About = () => {
-
-    
-    const data = useSelector(state => state.data?.value);
-    console.log(data);
+    const dispatch=useDispatch()
+    const data = useSelector(state => console.log(state.posts))
+    useEffect(() => {
+        dispatch(fetchPosts())
+    },[])
     return (
         <div>
             
