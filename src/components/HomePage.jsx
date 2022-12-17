@@ -1,9 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import counterReducer, { decrement, increment } from '../features/counter/CounterSlice';
-import PostReducer from '../features/PostSlice/PostSlice';
-// import Data from '../contexts/Data'
+import { decrement, increment } from '../features/counter/CounterSlice';
 
 
 const HomePage = () => {

@@ -8,7 +8,7 @@ const initialState = {
 }
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
-    const res = await axios.get('https://jsonplaceholder.typicode.com/posts')
+    const res = await axios.get('https://jsonplaceholder.typicode.com/post')
     return res.data;
     // axios.get('https://jsonplaceholder.typicode.com/posts')
     //     .then(res => {
@@ -26,8 +26,8 @@ const PostSlice = createSlice({
             state.loading = false,
                 state.posts=payload
         })
-        builder.addCase(fetchPosts.rejected, (state, { payload }) => {
-            state.error=payload
+        builder.addCase(fetchPosts.rejected, (state, { error }) => {
+            state.error=error.message
         })
     }
 })
